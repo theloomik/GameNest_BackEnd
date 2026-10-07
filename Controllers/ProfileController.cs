@@ -23,4 +23,11 @@ public class ProfileController : ControllerBase
             role
         });
     }
+
+    [Authorize(Roles = "Admin")]
+    [HttpGet("admin")]
+    public IActionResult AdminTest()
+    {
+        return Ok("Ти маєш роль Admin.");
+    }
 }
